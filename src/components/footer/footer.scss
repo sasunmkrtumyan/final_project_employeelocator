@@ -1,0 +1,54 @@
+.footer {
+  background-image: url(../../assets/images/navBackground/navBG.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 250px;
+}
+.footer-nav {
+  align-items: baseline;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  ul {
+    margin-top: 20px;
+    font-size: 22px;
+    line-height: initial;
+    li {
+      font-size: 16px;
+      cursor: pointer;
+    }
+    .first-child {
+      margin-top: 10px;
+    }
+  }
+  h3 {
+    font-size: 22px;
+  }
+  input {
+    border: none;
+    outline-style: none;
+    margin: 7px 0;
+    color: black;
+    padding: 3px;
+  }
+  form {
+    display: flex;
+    align-items: center;
+  }
+  button {
+    cursor: pointer;
+    border: none;
+    font-size: 22px;
+    background-color: #1890ff;
+    color: black;
+    transition: 0.5s;
+    padding: 3px 10px;
+    &:hover {
+      background-color: #0084ff;
+      color: white;
+    }
+  }
+  .footer-contact {
+    font-size: 16px;
+  }
+}

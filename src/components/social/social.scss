@@ -1,0 +1,12 @@
+.icons-list {
+  display: flex;
+  justify-content: space-around;
+  .social {
+    font-size: 30px;
+    cursor: pointer;
+    transition: 0.4s;
+    &:hover {
+      transform: scale(1.2);
+    }
+  }
+}
