@@ -18,6 +18,7 @@ export default function NavSearch() {
   return (
     <Space direction="vertical">
       <Search
+        className="nav-search"
         placeholder="input search text"
         allowClear
         enterButton="Search"

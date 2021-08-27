@@ -7,13 +7,17 @@ import {
 import Social from "../social/Social";
 
 export default function Footer() {
+  const openInNewTab = (url) => {
+    const newWindow = window.open(url, "_blank", "noopener,noreferrer");
+    if (newWindow) newWindow.opener = null;
+  };
   return (
     <div className="footer">
       <hr />
       <div className="container">
         <ul className="footer-nav">
           <ul>
-            MENU
+            Contacts
             <div className="footer-contact first-child">
               <i>
                 <EnvironmentOutlined />
@@ -43,7 +47,6 @@ export default function Footer() {
           <ul>
             Info
             <li className="first-child">FAQ</li>
-            <li>Companies</li>
           </ul>
           <div>
             <h3>Newsletter</h3>
@@ -56,6 +59,20 @@ export default function Footer() {
             <Social className="asd" />
           </div>
         </ul>
+      </div>
+      <div className="footer-copyright">
+        <h3 className="copyright-text">
+          <span>Copyright © 2021</span>
+          <a href='/'
+            onClick={() => {
+              openInNewTab("https:/www.linkedin.com/in/sasun-mkrtumyan");
+            }}
+            target="_blank"
+          >
+            <span> Sasun Mkrtumyan </span>
+          </a>
+          <span>All Rights Reserved.</span>
+        </h3>
       </div>
     </div>
   );

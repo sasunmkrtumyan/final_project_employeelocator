@@ -1,0 +1,67 @@
+.employeeCard {
+  margin-bottom: 15px;
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  font-size: 22px;
+  font-weight: bold;
+  line-height: 30px;
+  transition: 0.4s;
+  border: 1px solid #d6d6d6;
+  .img-div {
+    width: 150px;
+    height: 150px;
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      span {
+        margin: 5px 10px;
+      }
+    }
+  }
+
+  .central-div {
+    display: flex;
+    flex-direction: column;
+    span {
+      margin: 5px 10px;
+    }
+    .name {
+      font-size: 18px;
+      color: #686868;
+    }
+    .post-date {
+      color: #686868;
+      font-size: 14px;
+    }
+  }
+  .salary-div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    span {
+      color: #686868;
+      margin: 5px 10px;
+    }
+    .time {
+      width: 120px;
+      text-align: center;
+      color: white;
+      padding: 5px 10px;
+      background-color: #28a745;
+    }
+    .freelance {
+      background-color: red;
+    }
+    .partTime {
+      background-color: rgb(255, 166, 0);
+    }
+  }
+  &:hover {
+    transform: translate(1.15);
+    box-shadow: 3px 4px 7px;
+  }
+}

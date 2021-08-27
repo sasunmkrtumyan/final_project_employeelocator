@@ -2,7 +2,7 @@
   background-image: url(../../assets/images/navBackground/navBG.jpg);
   background-repeat: no-repeat;
   background-size: cover;
-  height: 250px;
+  height: 200px;
 }
 .footer-nav {
   align-items: baseline;
@@ -50,5 +50,13 @@
   }
   .footer-contact {
     font-size: 16px;
+  }
+}
+.footer-copyright {
+  background-color: black;
+  text-align: center;
+  .copyright-text {
+    padding: 20px;
+    color: white;
   }
 }

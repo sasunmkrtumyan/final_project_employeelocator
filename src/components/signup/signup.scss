@@ -1,0 +1,39 @@
+.signup {
+  background-image: url(../../assets/images/secBG.png);
+  background-size: cover;
+  padding-bottom: 10px;
+}
+.login-heading {
+  font-family: "Nunito", sans-serif;
+  margin: 30px;
+  text-align: center;
+  font-size: 32px;
+  font-weight: 700;
+  font-style: italic;
+}
+.signup-form {
+  width: 70%;
+  margin: 0 auto;
+  margin-left: 100px;
+}
+.registerIcon {
+  font-size: 30px;
+  padding: 0 7px;
+  cursor: pointer;
+  transition: 0.3s;
+  &:hover {
+    transform: scale(1.08);
+  }
+}
+.googleIcon:hover {
+  color: #ea4335;
+}
+.fbIcon:hover {
+  color: #026ae3;
+}
+.twIcon:hover {
+  color: #5da9dd;
+}
+.inIcon:hover {
+  color: #0077b5;
+}

@@ -1,0 +1,31 @@
+.employee-search {
+  h1 {
+    font-family: "Nunito", sans-serif;
+    font-size: 24px;
+    margin: 10px 5px;
+    font-weight: bold;
+    margin-bottom: 30px;
+    text-align: center;
+  }
+  display: flex;
+  flex-direction: column;
+  padding: 5px;
+}
+
+.search-border {
+  margin-top: 30px;
+  width: 100%;
+  border: 1px solid #bebebe;
+  padding: 10px;
+}
+.topping {
+  display: flex;
+  align-items: center;
+  margin-bottom: 5px;
+  input {
+    margin-right: 5px;
+  }
+}
+.but {
+  margin-top: 10px;
+}

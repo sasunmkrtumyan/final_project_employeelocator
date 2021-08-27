@@ -1,0 +1,32 @@
+.myAccount {
+  display: flex;
+  flex-wrap: wrap;
+  .myAccount-left {
+    width: 50%;
+    .post-text {
+      font-family: "Nunito", sans-serif;
+      font-size: 20px;
+      font-weight: bold;
+      margin-bottom: 30px;
+      text-align: center;
+    }
+  }
+  .myAccount-right {
+    width: 50%;
+  }
+  .input {
+    margin: 15px 0;
+  }
+  .btn {
+    margin-top: 50px;
+    width: 200px;
+    margin: 0 auto;
+  }
+}
+.search-sec {
+  width: 60%;
+  margin: 0 auto;
+}
+.large-font {
+  font-size: 30px;
+}

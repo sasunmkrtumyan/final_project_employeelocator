@@ -1,6 +1,32 @@
+import Faq from "react-faq-component";
+import React, { Component } from "react";
 import negotiation from "../../assets/images/negotiation.jpg";
 
 export default function About() {
+  const data = {
+    title: "FAQ",
+    rows: [
+      {
+        title: "Lorem ipsum dolor sit amet",
+        content: "Lorem ipsum dolor sit amet, consectetur ",
+      },
+      {
+        title: "Nunc maximus, magna at ultricies elementum",
+        content:
+          "Nunc maximus, magna at ultricies elementum, risus turpis vulputate quam.",
+      },
+      {
+        title: "Curabitur laoreet, mauris vel blandit fringilla",
+        content:
+          "Curabitur laoreet, mauris vel blandit fringilla, leo elit rhoncus nunc",
+      },
+      {
+        title: "What is the package version",
+        content: "v1.0.5",
+      },
+    ],
+  };
+
   return (
     <div className="container">
       <hr />
@@ -21,6 +47,9 @@ export default function About() {
         <div className="img">
           <img src={negotiation} alt="negotiation-img" />
         </div>
+      </div>
+      <div className="faq">
+        <Faq data={data} />
       </div>
     </div>
   );

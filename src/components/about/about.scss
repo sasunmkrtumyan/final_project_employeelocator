@@ -14,7 +14,7 @@
     padding: 30px;
     font-size: 18px;
     h1 {
-      font-family: 'Nunito', sans-serif;
+      font-family: "Nunito", sans-serif;
       margin: 30px;
       text-align: center;
       font-size: 32px;
@@ -29,4 +29,8 @@
       object-fit: contain;
     }
   }
+}
+.faq {
+  width: 60%;
+  margin: 80px auto;
 }
