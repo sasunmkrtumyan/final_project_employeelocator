@@ -2,11 +2,12 @@ import { Select } from "antd";
 
 const { Option } = Select;
 
-export default function SearchRegion({ changeHandler }) {
+export default function SearchRegion({ changeHandler, value }) {
   return (
     <div className="search-border">
       <h2 className="heading-text">Region</h2>
       <Select
+      value={value}
         showSearch
         style={{ width: "100%" }}
         placeholder="Select"

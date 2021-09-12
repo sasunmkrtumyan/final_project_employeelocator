@@ -1,5 +1,4 @@
 import Faq from "react-faq-component";
-import React, { Component } from "react";
 import negotiation from "../../assets/images/negotiation.jpg";
 
 export default function About() {
@@ -8,7 +7,8 @@ export default function About() {
     rows: [
       {
         title: "Lorem ipsum dolor sit amet",
-        content: "Lorem ipsum dolor sit amet, consectetur ",
+        content:
+          "Lorem ipsum dolor sit amet, consectetur Nunc maximus, magna at ultricies elementum, risus turpis vulputate quam Nunc maximus, magna at ultricies elementum, risus turpis vulputate quam ",
       },
       {
         title: "Nunc maximus, magna at ultricies elementum",
@@ -18,11 +18,11 @@ export default function About() {
       {
         title: "Curabitur laoreet, mauris vel blandit fringilla",
         content:
-          "Curabitur laoreet, mauris vel blandit fringilla, leo elit rhoncus nunc",
+          "Curabitur laoreet, mauris vel blandit fringilla, leo elit rhoncus nunc Lorem ipsum dolor sit amet, consectetur Nunc maximus, magna at ultricies elementum, risus turpis vulputate quam Nunc maximus, magna at ultricies elementum, risus turpis vulputate qua",
       },
       {
         title: "What is the package version",
-        content: "v1.0.5",
+        content: "v1.0.1",
       },
     ],
   };

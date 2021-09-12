@@ -1,11 +1,10 @@
 import { Radio, Space } from "antd";
-import { useState } from "react";
 
-export default function SearchJobType({ changeHandler }) {
+export default function SearchJobType({ changeHandler, value }) {
   return (
     <div className="search-border">
       <h2 className="heading-text">Job type</h2>
-      <Radio.Group onChange={changeHandler} name="job-type">
+      <Radio.Group value={value} onChange={changeHandler} name="job_type">
         <Space direction="vertical">
           <Radio value="Full time">Full time</Radio>
           <Radio value="Part time">Part time</Radio>

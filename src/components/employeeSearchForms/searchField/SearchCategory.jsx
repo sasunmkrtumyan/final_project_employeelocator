@@ -2,12 +2,13 @@ import { Select } from "antd";
 
 const { Option } = Select;
 
-export default function SearchCategory({ changeHandler }) {
+export default function SearchCategory({ changeHandler, value }) {
   return (
     <div className="search-border">
       <h2 className="heading-text">Category</h2>
       <Select
         showSearch
+        value={value} 
         style={{ width: "100%" }}
         placeholder="Select"
         onChange={changeHandler}

@@ -1,10 +1,10 @@
 import { Radio, Space } from "antd";
 
-export default function SearchExperiance({ changeHandler }) {
+export default function SearchExperiance({ changeHandler, value }) {
   return (
     <div className="search-border">
       <h2 className="heading-text">Experiance</h2>
-      <Radio.Group onChange={changeHandler} name="experience">
+      <Radio.Group onChange={changeHandler} value={value} name="experience">
         <Space direction="vertical">
           <Radio value="0-6 mounts">0-6 mounts</Radio>
           <Radio value="6 mounts - 1 year">6 mounts - 1 year</Radio>

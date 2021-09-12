@@ -1,4 +1,5 @@
 import { firestore } from "../helpers/libs/firebase.libs";
+
 var docRef = firestore.collection("users");
 
 export const addUser = ({ email, password, uid }) => {
@@ -9,10 +10,8 @@ export const addUser = ({ email, password, uid }) => {
   });
 };
 
-export const updateProfile = (uid, { description }) => {
-  return firestore.collection("users").doc(uid).update({
-    description,
-  });
+export const updateProfile = ({ uid, ...userData }) => {
+  return firestore.collection("users").doc(uid).update(userData);
 };
 
 export const getUser = async (uid) => {
@@ -22,7 +21,6 @@ export const getUser = async (uid) => {
     if (doc.exists) {
       return doc.data();
     } else {
-      // doc.data() will be undefined in this case
       console.log("No such document!");
     }
   } catch (e) {

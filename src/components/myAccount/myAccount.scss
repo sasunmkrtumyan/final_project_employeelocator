@@ -18,9 +18,22 @@
     margin: 15px 0;
   }
   .btn {
+    font-size: 18px;
+    font-weight: 600;
     margin-top: 50px;
     width: 200px;
     margin: 0 auto;
+    background-color: #6acce4;
+    transition: 0.3s;
+    border: none;
+    padding: 5px 0px;
+    cursor: pointer;
+    &:hover {
+      background-color: #17b1d1;
+    }
+  }
+  .surname {
+    margin-top: 20px;
   }
 }
 .search-sec {
@@ -29,4 +42,9 @@
 }
 .large-font {
   font-size: 30px;
+}
+.imageDiv {
+  width: 150px;
+  height: 150px;
+  object-fit: contain;
 }

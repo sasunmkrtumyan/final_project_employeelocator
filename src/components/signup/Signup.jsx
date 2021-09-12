@@ -1,5 +1,5 @@
 import { useHistory } from "react-router-dom";
-import { Form, Input, Cascader, Select, Button } from "antd";
+import { Form, Input, Button } from "antd";
 import { useAuth } from "../../helpers/hooks/useAuth";
 import {
   FacebookOutlined,
@@ -9,50 +9,6 @@ import {
   TwitterOutlined,
 } from "@ant-design/icons";
 
-const { Option } = Select;
-
-const residences = [
-  {
-    value: "Yerevan",
-    label: "Yerevan",
-  },
-  {
-    value: "Aragatsotn",
-    label: "Aragatsotn",
-  },
-  {
-    value: "Ararat",
-    label: "Ararat",
-  },
-  {
-    value: "Armavir",
-    label: "Armavir",
-  },
-  {
-    value: "Gegharkunik",
-    label: "Gegharkunik",
-  },
-  {
-    value: "Kotayk",
-    label: "Kotayk",
-  },
-  {
-    value: "Lori",
-    label: "Lori",
-  },
-  {
-    value: "Shirak",
-    label: "Shirak",
-  },
-  {
-    value: "Syunik",
-    label: "Syunik",
-  },
-  {
-    value: "another",
-    label: "another",
-  },
-];
 const formItemLayout = {
   labelCol: {
     xs: {
@@ -94,18 +50,18 @@ const Signup = () => {
     history.push("/login");
   };
 
-  const prefixSelector = (
-    <Form.Item name="prefix" noStyle>
-      <Select
-        style={{
-          width: 70,
-        }}
-      >
-        <Option value="374">+374</Option>
-        <Option value="87">+87</Option>
-      </Select>
-    </Form.Item>
-  );
+  // const prefixSelector = (
+  //   <Form.Item name="prefix" noStyle>
+  //     <Select
+  //       style={{
+  //         width: 70,
+  //       }}
+  //     >
+  //       <Option value="374">+374</Option>
+  //       <Option value="87">+87</Option>
+  //     </Select>
+  //   </Form.Item>
+  // );
 
   return (
     <div className="container">
@@ -181,7 +137,7 @@ const Signup = () => {
           >
             <Input.Password />
           </Form.Item>
-          
+
           <Form.Item {...tailFormItemLayout}>
             <Button type="primary" htmlType="submit">
               Register

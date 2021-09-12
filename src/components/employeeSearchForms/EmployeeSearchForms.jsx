@@ -1,6 +1,6 @@
 import { Button, Input } from "antd";
 import SearchCategory from "./searchField/SearchCategory";
-import SearchExperiance from "./searchField/SearchExperiance";
+import SearchExperience from "./searchField/SearchExperience";
 import SearchJobType from "./searchField/SearchJobType";
 import SearchKeyword from "./searchField/SearchKeyword";
 import SearchRegion from "./searchField/searchRegion";
@@ -20,7 +20,7 @@ export default function EmployeeSearchForms() {
           placeholder="Minimum-Wage"
         />
       </div>
-      <SearchExperiance />
+      <SearchExperience />
       <Button className="but" type="primary">
         Search
       </Button>

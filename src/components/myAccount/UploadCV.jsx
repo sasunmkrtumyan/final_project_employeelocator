@@ -1,31 +1,22 @@
-import { Upload, message, Button } from "antd";
-import { UploadOutlined } from "@ant-design/icons";
+import { storage } from "../../helpers/libs/firebase.libs";
 
-export default function UploadCV() {
-  const props = {
-    name: "file",
-    action: "https://www.mocky.io/v2/5cc8019d300000980a055e76",
-    headers: {
-      authorization: "authorization-text",
-    },
-    onChange(info) {
-      if (info.file.status !== "uploading") {
-        console.log(info.file, info.fileList);
-      }
-      if (info.file.status === "done") {
-        message.success(`${info.file.name} file uploaded successfully`);
-      } else if (info.file.status === "error") {
-        message.error(`${info.file.name} file upload failed.`);
-      }
-    },
+export default function UploadCV({ onChange, value }) {
+  const handleUpload = async (e) => {
+    const file = e.target.files[0];
+    if (!file) {
+      return;
+    }
+    const storageRef = storage.ref();
+    const fileRef = storageRef.child(file.name);
+    await fileRef.put(file);
+    onChange(await fileRef.getDownloadURL());
   };
 
   return (
     <div className="search-border">
-        <h2 className="heading-text">Upload CV</h2>
-      <Upload {...props}>
-        <Button icon={<UploadOutlined />}>Click to Upload</Button>
-      </Upload>
+      <h2 className="heading-text">Upload CV</h2>
+      <span>{value && "uploaded"}</span>
+      <input type="file" onChange={handleUpload} />
     </div>
   );
 }

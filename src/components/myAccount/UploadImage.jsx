@@ -1,43 +1,31 @@
-import React, { useState } from "react";
-import { Upload } from "antd";
-import ImgCrop from "antd-img-crop";
+import { storage } from "../../helpers/libs/firebase.libs";
 
-export default function UploadImage() {
-  const [fileList, setFileList] = useState([]);
+export default function UploadImage({ onChange, value }) {
+  // const [fileList, setFileList] = useState([]);
 
-  const onChange = ({ fileList: newFileList }) => {
-    setFileList(newFileList);
-  };
-
-  const onPreview = async (file) => {
-    let src = file.url;
-    if (!src) {
-      src = await new Promise((resolve) => {
-        const reader = new FileReader();
-        reader.readAsDataURL(file.originFileObj);
-        reader.onload = () => resolve(reader.result);
-      });
+  const handleUploadImg = (e) => {
+    const file = e.target.files[0];
+    console.log({ file });
+    if (!file) {
+      return;
     }
-    const image = new Image();
-    image.src = src;
-    const imgWindow = window.open(src);
-    imgWindow.document.write(image.outerHTML);
+
+    const storageRef = storage.ref();
+    const fileRef = storageRef.child(file.name);
+    fileRef.put(file).then((e) => {
+      e.ref.getDownloadURL().then((url) => onChange(url));
+    });
   };
 
   return (
     <div className="search-border">
       <h2 className="heading-text">Upload you picture</h2>
-      <ImgCrop rotate>
-        <Upload
-          action="https://www.mocky.io/v2/5cc8019d300000980a055e76"
-          listType="picture-card"
-          fileList={fileList}
-          onChange={onChange}
-          onPreview={onPreview}
-        >
-          {fileList.length < 5 && "+ Upload"}
-        </Upload>
-      </ImgCrop>
+      {value && <img className="imageDiv" src={value} alt="" />}
+      <input
+        type="file"
+        // fileList={fileList}
+        onChange={handleUploadImg}
+      />
     </div>
   );
 }

@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 import mainLogo from "../../assets/images/mainlogo.png";
 // import NavSearch from "../navSearch/NavSearch";
-import { Avatar, Image } from "antd";
+import { Avatar } from "antd";
 import { UserOutlined } from "@ant-design/icons";
 import { useAuth } from "../../helpers/hooks/useAuth";
 // import userEvent from "@testing-library/user-event";
@@ -36,7 +36,7 @@ export default function Navbar() {
               {!user ? (
                 <div>
                   <Link to="/login">Login</Link>
-                  <span className="or">  or  </span>
+                  <span className="or"> or </span>
                   <Link to="/SignupPage">Signup</Link>
                 </div>
               ) : (
