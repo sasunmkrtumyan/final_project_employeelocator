@@ -38,9 +38,9 @@ export default function MyAccount() {
   function onSubmit(values) {
     const uid = firebase.auth().currentUser.uid;
     updateProfile({ uid, ...values });
+    alert('Congratulation, your post updated')
   }
 
-  console.log(employeedata);
 
   return (
     <div className="container">
@@ -60,7 +60,7 @@ export default function MyAccount() {
                     <Input placeholder="name" {...field} value={field.value} />
                   )}
                 />
-                {errors.name && <span>This field is required</span>}
+                {errors.name && <span className='required'>This field is required</span>}
                 <Controller
                   name="surname"
                   control={control}
@@ -75,7 +75,7 @@ export default function MyAccount() {
                     />
                   )}
                 />
-                {errors.surname && <span>This field is required</span>}
+                {errors.surname && <span className='required'>This field is required</span>}
                 <Controller
                   name="phone"
                   control={control}
@@ -90,7 +90,7 @@ export default function MyAccount() {
                     />
                   )}
                 />
-                {errors.phone && <span>This field is required</span>}
+                {errors.phone && <span className='required'>This field is required</span>}
               </div>
               <Controller
                 name="profession"
@@ -104,7 +104,7 @@ export default function MyAccount() {
                   />
                 )}
               />
-              {errors.profession && <span>This field is required</span>}
+              {errors.profession && <span className='required'>This field is required</span>}
 
               <Controller
                 name="region"
@@ -118,7 +118,7 @@ export default function MyAccount() {
                   />
                 )}
               />
-              {errors.region && <span>This field is required</span>}
+              {errors.region && <span className='required'>This field is required</span>}
 
               <Controller
                 name="job_type"
@@ -132,7 +132,7 @@ export default function MyAccount() {
                   />
                 )}
               />
-              {errors.job_type && <span>This field is required</span>}
+              {errors.job_type && <span className='required'>This field is required</span>}
               <div className="search-border">
                 <h2 className="heading-text">input min salary</h2>
                 <Controller
@@ -151,7 +151,7 @@ export default function MyAccount() {
                     />
                   )}
                 />
-                {errors.minimum_wage && <span>This field is required</span>}
+                {errors.minimum_wage && <span className='required'>This field is required</span>}
               </div>
             </div>
           </div>
@@ -169,7 +169,7 @@ export default function MyAccount() {
                   />
                 )}
               />
-              {errors.experience && <span>This field is required</span>}
+              {errors.experience && <span className='required'>This field is required</span>}
               <div className="search-border">
                 <h2 className="heading-text">Portfolio link</h2>
                 <Controller
@@ -181,7 +181,7 @@ export default function MyAccount() {
                     <Input placeholder="link" {...field} value={field.value} />
                   )}
                 />
-                {errors.portfolio_link && <span>This field is required</span>}
+                {errors.portfolio_link && <span className='required'>This field is required</span>}
               </div>
               <Controller
                 name="CVUrl"
@@ -192,7 +192,7 @@ export default function MyAccount() {
                   <UploadCV value={field.value} onChange={field.onChange} />
                 )}
               />
-              {errors.CVUrl && <span>This field is required</span>}
+              {errors.CVUrl && <span className='required'>This field is required</span>}
 
               <Controller
                 name="imgUrl"
@@ -203,7 +203,7 @@ export default function MyAccount() {
                   <UploadImage value={field.value} onChange={field.onChange} />
                 )}
               />
-              {errors.imgUrl && <span>This field is required</span>}
+              {errors.imgUrl && <span className='required'>This field is required</span>}
             </div>
           </div>
 

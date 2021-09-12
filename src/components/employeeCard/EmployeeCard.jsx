@@ -1,13 +1,14 @@
 import { Tag } from "antd";
 import { Link } from "react-router-dom";
 export default function EmployeeCard(props) {
-  const { name, surname, profession, minimum_wage, job_type, imgUrl } = props;
+  const { name, surname, profession, minimum_wage, job_type, imgUrl, uid } =
+    props;
 
   return (
     <>
-      <Link className="employeeCard" to="/employee-info">
+      <Link className="employeeCard" to={`/employee-info/${uid}`}>
         <div className="img-div">
-          <img src={imgUrl} alt="user1" />
+          <img src={imgUrl} alt="user_Image" />
         </div>
         <div className="central-div">
           <span className="proffesion">{profession}</span>

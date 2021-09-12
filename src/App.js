@@ -1,12 +1,13 @@
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 
-import AboutPage from "./pages/aboutPage/AboutPage";
-import ContactPage from "./pages/contactPage/ContactPage";
+import AboutPage from "./pages/aboutPage/aboutPage";
+import ContactPage from "./pages/contactPage/contactPage";
 import HomePage from "./pages/homePage/HomePage";
 import LoginPage from "./pages/loginPage/LoginPage";
 import SignupPage from "./pages/signupPage/SignupPage";
 import MyAccountPage from "./pages/myAccountPage/MyAccountPage";
 import { ProvideAuth } from "./helpers/hooks/useAuth";
+import EmployeeInfo from "./pages/employeeInfo/EmployeeInfo";
 
 export default function App() {
   return (
@@ -31,6 +32,9 @@ export default function App() {
             </Route>
             <Route path="/MyAccountPage">
               <MyAccountPage />
+            </Route>
+            <Route path="/employee-info/:uid">
+              <EmployeeInfo />
             </Route>
           </Switch>
         </div>

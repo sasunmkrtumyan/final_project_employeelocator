@@ -1,0 +1,29 @@
+.employeeInfo {
+  //   background-color: rgb(240, 240, 240);
+  //   border-radius: 7px;
+  .backgr {
+    background-color: lightblue;
+    transform: rotate(10deg);
+  }
+  .pink {
+    background-color: rgb(255, 225, 229);
+  }
+  .userName {
+    font-size: 30px;
+    text-align: center;
+  }
+  .userImage {
+    width: 300px;
+    transform: rotate(-10deg);
+  }
+  .contact {
+    width: 70%;
+    margin: 20px auto;
+    display: flex;
+    justify-content: space-around;
+  }
+  .span {
+    font-size: 20px;
+    padding: 10px 0;
+  }
+}
