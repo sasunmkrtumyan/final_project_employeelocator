@@ -10,10 +10,13 @@ import { Input } from "antd";
 import UploadCV from "./UploadCV";
 import UploadImage from "./UploadImage";
 import { updateProfile } from "../../sevices/user.services";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 export default function MyAccount() {
   const { user } = useAuth();
   const [employeedata, setEmployeedata] = useState({});
+  const notify = () => toast.success("Your post updated successfully!");
 
   const {
     handleSubmit,
@@ -21,8 +24,6 @@ export default function MyAccount() {
     control,
     formState: { errors },
   } = useForm({ defaultValues: employeedata });
-
-  console.log(employeedata);
 
   useEffect(() => {
     if (user) {
@@ -33,14 +34,14 @@ export default function MyAccount() {
       keys.forEach((key) => (newObj[key] = data[key]));
       reset(newObj);
     }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [user]);
 
   function onSubmit(values) {
     const uid = firebase.auth().currentUser.uid;
     updateProfile({ uid, ...values });
-    alert('Congratulation, your post updated')
+    notify();
   }
-
 
   return (
     <div className="container">
@@ -60,7 +61,9 @@ export default function MyAccount() {
                     <Input placeholder="name" {...field} value={field.value} />
                   )}
                 />
-                {errors.name && <span className='required'>This field is required</span>}
+                {errors.name && (
+                  <span className="required">This field is required</span>
+                )}
                 <Controller
                   name="surname"
                   control={control}
@@ -75,7 +78,9 @@ export default function MyAccount() {
                     />
                   )}
                 />
-                {errors.surname && <span className='required'>This field is required</span>}
+                {errors.surname && (
+                  <span className="required">This field is required</span>
+                )}
                 <Controller
                   name="phone"
                   control={control}
@@ -90,7 +95,9 @@ export default function MyAccount() {
                     />
                   )}
                 />
-                {errors.phone && <span className='required'>This field is required</span>}
+                {errors.phone && (
+                  <span className="required">This field is required</span>
+                )}
               </div>
               <Controller
                 name="profession"
@@ -104,7 +111,9 @@ export default function MyAccount() {
                   />
                 )}
               />
-              {errors.profession && <span className='required'>This field is required</span>}
+              {errors.profession && (
+                <span className="required">This field is required</span>
+              )}
 
               <Controller
                 name="region"
@@ -118,7 +127,9 @@ export default function MyAccount() {
                   />
                 )}
               />
-              {errors.region && <span className='required'>This field is required</span>}
+              {errors.region && (
+                <span className="required">This field is required</span>
+              )}
 
               <Controller
                 name="job_type"
@@ -132,7 +143,9 @@ export default function MyAccount() {
                   />
                 )}
               />
-              {errors.job_type && <span className='required'>This field is required</span>}
+              {errors.job_type && (
+                <span className="required">This field is required</span>
+              )}
               <div className="search-border">
                 <h2 className="heading-text">input min salary</h2>
                 <Controller
@@ -151,7 +164,9 @@ export default function MyAccount() {
                     />
                   )}
                 />
-                {errors.minimum_wage && <span className='required'>This field is required</span>}
+                {errors.minimum_wage && (
+                  <span className="required">This field is required</span>
+                )}
               </div>
             </div>
           </div>
@@ -169,7 +184,9 @@ export default function MyAccount() {
                   />
                 )}
               />
-              {errors.experience && <span className='required'>This field is required</span>}
+              {errors.experience && (
+                <span className="required">This field is required</span>
+              )}
               <div className="search-border">
                 <h2 className="heading-text">Portfolio link</h2>
                 <Controller
@@ -181,7 +198,9 @@ export default function MyAccount() {
                     <Input placeholder="link" {...field} value={field.value} />
                   )}
                 />
-                {errors.portfolio_link && <span className='required'>This field is required</span>}
+                {errors.portfolio_link && (
+                  <span className="required">This field is required</span>
+                )}
               </div>
               <Controller
                 name="CVUrl"
@@ -192,7 +211,9 @@ export default function MyAccount() {
                   <UploadCV value={field.value} onChange={field.onChange} />
                 )}
               />
-              {errors.CVUrl && <span className='required'>This field is required</span>}
+              {errors.CVUrl && (
+                <span className="required">This field is required</span>
+              )}
 
               <Controller
                 name="imgUrl"
@@ -203,13 +224,26 @@ export default function MyAccount() {
                   <UploadImage value={field.value} onChange={field.onChange} />
                 )}
               />
-              {errors.imgUrl && <span className='required'>This field is required</span>}
+              {errors.imgUrl && (
+                <span className="required">This field is required</span>
+              )}
             </div>
           </div>
-
+          <ToastContainer
+            position="top-center"
+            autoClose={3000}
+            hideProgressBar={false}
+            newestOnTop={false}
+            closeOnClick
+            rtl={false}
+            pauseOnFocusLoss
+            draggable
+            pauseOnHover
+          />
           <input className="btn" type="submit" />
         </div>
       </form>
+      <div></div>
     </div>
   );
 }

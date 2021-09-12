@@ -27,9 +27,6 @@ export default function Navbar() {
                 <Link to="/AboutPage">About</Link>
               </li>
               <li className="nav-li">
-                <Link to="/">Companies</Link>
-              </li>
-              <li className="nav-li">
                 <Link to="/contact">Contact</Link>
               </li>
 
