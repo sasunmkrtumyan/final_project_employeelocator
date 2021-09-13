@@ -156,6 +156,8 @@ export default function MyAccount() {
                   rules={{ required: true }}
                   render={({ field }) => (
                     <Input
+                      pattern="[0-9]*"
+                      inputmode="numeric"
                       type="number"
                       className="input"
                       placeholder="Minimum-Wage"
