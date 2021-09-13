@@ -15,7 +15,9 @@ export default function EmployeeCard(props) {
           <span className="name">
             {name} {surname}
           </span>
-          <span className="post-date">Last updated: 05-09-2021</span>
+          <span className="post-date">
+            Last updated: {new Date().toDateString()}
+          </span>
         </div>
         <div className="salary-div">
           <span className="salary">min salary - {minimum_wage}</span>
